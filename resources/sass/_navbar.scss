@@ -1,0 +1,67 @@
+/* Stile nav */
+
+.baf-empty-space {
+    height: $altezza-nav;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    height: $altezza-nav;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+
+    &.navbar-expand-lg {
+        justify-content: space-between;
+    }
+
+    a {
+
+        img {
+            height: 60px;
+            margin: 15px 0;
+        }
+
+    }
+
+    ul.navbar-nav {
+
+        li.nav-item {
+            margin: 0 5px;
+            padding: 0 20px;
+            border-bottom: 2px solid transparent;
+
+            a.nav-link {
+                color: $colore_blu;
+            }
+
+            // Stile ultimo elemento:
+            &.baf-cta {
+                margin: 0;
+                padding: 0;
+                border: 2px solid $colore_verde;
+                border-radius: 5px;
+                background-color: $colore_verde;
+
+                a.nav-link {
+                    color: $colore_bianco;
+                    padding: 7px 25px;
+
+                    &:hover {
+                        color: $colore_bianco;
+                        background-color: $colore_verde_chiaro;
+                    }
+                }
+            }
+
+            // soluzione momentanea, da sostituire con classe "attiva"
+            &:hover {
+                border-bottom: 2px solid $colore_verde;
+            }
+
+        }
+
+    }
+
+}

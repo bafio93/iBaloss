@@ -1,0 +1,91 @@
+.baf-home section {
+
+    &.baf-home-jumbo {
+        background-color: $colore_bianco;
+        padding: 80px 0;
+
+        .container .row  {
+
+            .col {
+                line-height: 1.5;
+
+                h1 {
+                    font-size: 57px;
+                }
+
+                p {
+                    font-size: 22px;
+
+                    ul {
+                        font-size: 19px;
+                        padding: 0;
+                    }
+
+                }
+
+                img {
+
+                    width: 500px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &.baf-home-data {
+        background-color: $colore_blu;
+        padding: 40px 0;
+
+        .baf-card {
+            text-align: center;
+
+            h3 {
+                color: $colore_bianco;
+                font-size: 50px;
+            }
+
+            p {
+                color: $colore_bianco;
+            }
+        }
+
+    }
+
+    &.baf-home-school {
+        background-color: $colore_azzurro;
+        padding: 100px 0;
+
+        .container .row  {
+
+            .col {
+                line-height: 1.5;
+
+                h3 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 19px;
+                }
+
+                li {
+                    padding: 10px 0;
+                    font-size: 19px;   
+                }
+
+                img {
+
+                    width: 500px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

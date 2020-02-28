@@ -1,0 +1,22 @@
+.container-fluid.baf-oops {
+    background-color: $colore_blu;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p,h1 {
+        color: $colore_bianco;
+    }
+
+    a {
+        color: $colore_verde_chiaro;
+
+        &:hover {
+            color: $colore_verde;
+        }
+
+    }
+
+}
