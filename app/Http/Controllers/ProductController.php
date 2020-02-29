@@ -36,50 +36,43 @@ class ProductController extends Controller
         $product->save();
         // REDIRECT
         return redirect()->route("products.index");
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+
+        // first() restituisce già un oggetto, e non una collection
+        // $prodotto = Product::where("id",$id)->first();
+        $prodotto = Product::find($id);
+        // Equivalente a sopra, ovviamente, ma più comoda!
+        return view("products.show", ["product" => $prodotto]);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        // VIA DI MEZZO TRA CREATE E SHOW.
+        // MOLTO LEGATA A UPDATE, COSì COME CREATE LO è A STORE (VEDI VIEW)
+        $prodotto = Product::find($id);
+        return view("products.edit", ["product" => $prodotto]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        // dd($request);
+        // PRENDO I DATI
+        $formData = $request->all();
+        // dd($formData);
+        // SALVO NEL DATABASE
+        $product->update($formData);
+        // REDIRECT
+        return redirect()->route("products.index");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route("products.index");
     }
 }

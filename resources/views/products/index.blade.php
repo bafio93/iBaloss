@@ -12,13 +12,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p>PRODOTTO: {{ $product->name }}</p>
-                        <p>COLORE: {{ $product->color }}</p>
-                        <p>DESCRIZIONE: {{ $product->description }}</p>
-                        <p>COSTO: {{ $product->price }}€</p>
+                        <p><strong>PRODOTTO:</strong> {{ $product->name }}</p>
+                        <p><strong>COSTO:</strong> {{ $product->price }}€</p>
                     </div>
                     <div class="col">
-                        <!-- <p><a class="btn btn-success" href="{{ route('products.create') }}">CREA OGGETTO</a></p> -->
+                        <a class="btn btn-info" href="{{ route('products.show',['product' => $product->id]) }}">VISUALIZZA DETTAGLI</a>
+                        <a class="btn btn-dark" href="{{ route('products.edit',['product' => $product->id]) }}">MODIFICA OGGETTO</a>
+                        <form action="{{ route('products.destroy',['product' => $product->id]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" class="btn btn-danger" value="Elimina oggetto!">
+                        </form>
                     </div>
                 </div>
             </div>
