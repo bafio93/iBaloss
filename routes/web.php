@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', "HomeController@index")->name("homepage");
+Route::resource('/products', "ProductController");

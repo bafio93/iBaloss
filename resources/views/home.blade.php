@@ -1,26 +1,32 @@
 @extends("layouts.main")
 @section("content")
     <div class="baf-home">
-        <!-- JUMBO: -->
-        <section class="baf-home-jumbo">
+        <!-- decommenta: -->
+        <!-- <section class="baf-home-jumbo">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h1 class="">DIVENTA<br><strong>CAPACE DI FARE COSE CON LARAVEL PLS</strong></h1>
-                        <p>
-                            <strong>Trasformiamo la tua passione in una carriera. Se non trovi lavoro, ti rimborsiamo.</strong>
-                            <ul>
-                                <li><strong>6 mesi</strong> di corso intensivo online in diretta</li>
-                                <li><strong>Nessuna competenza</strong> di programmazione richiesta</li>
-                                <li>Siamo certi del tuo successo, altrimenti <strong>ti rimborsiamo</strong></li>
-                            </ul>
-                        </p>
+                        <h1 class="">DIVENTA<br><strong>CAPACE DI FARE COSE CON LARAVEL </strong>(PLS)</h1>
                     </div>
                     <div class="col">
-                        <img src="https://www.boolean.careers/images/homepage/pc-black-gif.gif" alt="">
+                        <form class="" action="{{ route('store') }}" method="post">
+                            @csrf
+                            <p><input type="text" name="name" value="" placeholder="name"></p>
+                            <p><input type="text" name="color" value="" placeholder="color"></p>
+                            <p><input type="text" name="description" value="" placeholder="description"></p>
+                            <p><input type="text" name="price" value="" placeholder="price"></p>
+                            <p><input type="submit" name="invia" value="Crea oggetto!"></p>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            @foreach ($prodotti as $prodotto)
+                                <li>Nome prodotto: {{ $prodotto->name }}<br>Prezzo prodotto: {{ $prodotto->price }}€</li><br>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 @endsection
